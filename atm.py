@@ -1,6 +1,8 @@
 '''
 Withdrawing cash, Depositing money, Balance, quit
 '''
+import os
+os.system('clear')
 
 class Atm():
     def __init__(self, balance):
@@ -47,19 +49,25 @@ class Atm():
                             #            WITHDRAW           #
                             #################################
 
-                            (1) 10 £              60 £  (5)
-                            (2) 20 £              80 £  (6)     
-                            (3) 40 £              100 £ (7)
-                            (4) 50 £              other (8)
+                            (1) 10 £                60 £  (5)
+                            (2) 20 £                80 £  (6)     
+                            (3) 40 £                100 £ (7)
+                            (4) 50 £                other (8)
             ''')
 
 atm = Atm(1500)
 atm.home_screen()
-
-
 user_input = input("> ")
-if user_input == "1":
-    pass
+
+if user_input == "1": 
+    # withdraw
+    os.system('clear')
+    atm.home_withdraw()
+    user_input = input("> ")
+    atm.balance -= atm.withdraw_nums.get((user_input))
+    atm.view_balance()
+
+    
 elif user_input == "2":
     pass
 elif user_input == "3":
