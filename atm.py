@@ -1,57 +1,8 @@
-'''
-Withdrawing cash, Depositing money, Balance, quit
-'''
+from Main_Bank_VersionX import *
 import os
-os.system('clear')
 
-class Atm():
-    def __init__(self, balance):
-        self.balance = balance
-        self.withdraw_choice = ["1", "2", "3", "4", "5", "6", "7"]
-        self.withdraw_nums = {
-            "1": 10,
-            "2": 20,
-            "3": 40,
-            "4": 50,
-            "5": 60,
-            "6": 80,
-            "7": 100
-        }
 
-    def view_balance(self):
-        print(self.balance)
-    
-    def deposit(self, n):
-        self.balance += n
-    
-    def withdraw(self, n):
-        self.balance -= n
-
-    def home_screen(self):
-        print('''
-                            #################################
-                            #             ATM               #
-                            #################################
-
-                            (1) withdraw
-                            (2) deposit
-                            (3) view balance
-                            (4) quit
-        ''')
-
-    def home_withdraw(self):
-            print('''
-                            #################################
-                            #            WITHDRAW           #
-                            #################################
-
-                            (1) 10 £                60 £  (5)
-                            (2) 20 £                80 £  (6)     
-                            (3) 40 £                100 £ (7)
-                            (4) 50 £                other (8)
-            ''')
-
-atm = Atm(1500)
+atm = Account(1500)
 atm.home_screen()
 user_input = input("> ")
 
