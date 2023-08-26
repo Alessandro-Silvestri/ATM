@@ -34,6 +34,6 @@ oAccount = Account(userName, userPassword, userBalance)
 accountsDict[counter] = oAccount
 
 # using the new object
-accountsDict[2].show()
-accountsDict[2].deposit(50, accountsDict[2].password)
-accountsDict[2].show()
+print(accountsDict[2].show())
+accountsDict[2].withdraw(700)
+print(accountsDict[2].show())
